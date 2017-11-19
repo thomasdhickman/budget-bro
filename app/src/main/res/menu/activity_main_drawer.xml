@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_menu_home"
+            android:title="@string/home" />
+
+        <item
+            android:id="@+id/nav_transactions"
+            android:icon="@drawable/ic_menu_transactions"
+            android:title="@string/posted_transactions" />
+
+        <item
+            android:id="@+id/nav_recurring_transactions"
+            android:icon="@drawable/ic_nav_recurring"
+            android:title="@string/recurring_transactions" />
+
+        <item
+            android:id="@+id/nav_accounts"
+            android:icon="@drawable/ic_nav_account"
+            android:title="@string/my_accounts" />
+
+    </group>
+
+</menu>

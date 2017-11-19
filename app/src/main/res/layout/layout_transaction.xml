@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/text_margin">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/payee"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?attr/textAppearanceListItem"
+            tools:text="DTE Energy" />
+
+        <TextView
+            android:id="@+id/category"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Bills/Utility" />
+
+        <TextView
+            android:id="@+id/due_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Jul 23, 2017" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/amount_due"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:textColor="@color/transaction_red"
+        android:textSize="20sp"
+        android:gravity="center_vertical"
+        android:layout_alignParentEnd="true"
+        tools:text="-$123.45"/>
+
+</RelativeLayout>
