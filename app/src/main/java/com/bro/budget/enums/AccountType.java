@@ -1,4 +1,4 @@
-package com.thickman.budget.enums;
+package com.bro.budget.enums;
 
 import java.util.ArrayList;
 import java.util.List;

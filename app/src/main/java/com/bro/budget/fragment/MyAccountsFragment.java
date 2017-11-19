@@ -1,4 +1,4 @@
-package com.thickman.budget.fragment;
+package com.bro.budget.fragment;
 
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
@@ -8,22 +8,17 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.thickman.budget.R;
-import com.thickman.budget.adapter.AccountRecyclerViewAdapter;
-import com.thickman.budget.dialog.AddAccountDialog;
-import com.thickman.budget.object.Account;
-import com.thickman.budget.object.Transaction;
-import com.thickman.budget.realm.AccountRealmController;
-import com.thickman.budget.realm.RealmAccountsAdapter;
-import com.thickman.budget.realm.TransactionRealmController;
+import com.bro.budget.R;
+import com.bro.budget.adapter.AccountRecyclerViewAdapter;
+import com.bro.budget.object.Account;
+import com.bro.budget.realm.AccountRealmController;
+import com.bro.budget.realm.RealmAccountsAdapter;
 
 import io.realm.RealmResults;
 
-public class MyAccountsFragment extends ActionFragment implements AccountRecyclerViewAdapter.OnAccountClickListener,
-        AddAccountDialog.AddAccountDialogListener {
+public class MyAccountsFragment extends ActionFragment implements AccountRecyclerViewAdapter.OnAccountClickListener {
 
     private View rootView;
-    private RecyclerView recyclerView;
     private AccountRecyclerViewAdapter accountsAdapter;
 
     public MyAccountsFragment() {
@@ -31,8 +26,7 @@ public class MyAccountsFragment extends ActionFragment implements AccountRecycle
     }
 
     public static MyAccountsFragment newInstance() {
-        MyAccountsFragment fragment = new MyAccountsFragment();
-        return fragment;
+        return new MyAccountsFragment();
     }
 
     @Override
@@ -56,7 +50,7 @@ public class MyAccountsFragment extends ActionFragment implements AccountRecycle
     private void setupRecycler() {
         final LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
         layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
-        recyclerView = (RecyclerView) rootView.findViewById(R.id.list);
+        RecyclerView recyclerView = rootView.findViewById(R.id.list);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(accountsAdapter);
@@ -86,27 +80,7 @@ public class MyAccountsFragment extends ActionFragment implements AccountRecycle
     }
 
     @Override
-    public void onAction() {
-        AddAccountDialog dialog = new AddAccountDialog(getContext(), this);
-        dialog.show();
-    }
-
-    @Override
-    public String getFragmentName() {
-        return "My Accounts";
-    }
-
-    @Override
-    public void onAddButtonClicked(Account account, Transaction initialTransaction) {
-        AccountRealmController.getInstance().addAccount(account);
-        if (initialTransaction != null) {
-            TransactionRealmController.getInstance().addTransaction(initialTransaction);
-        }
-        refresh();
-    }
-
-    @Override
-    public void onCancelButtonClicked() {
-        refresh();
+    public int getFragmentName() {
+        return R.string.my_accounts;
     }
 }

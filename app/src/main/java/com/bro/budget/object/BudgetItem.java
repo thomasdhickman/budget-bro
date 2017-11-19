@@ -1,4 +1,4 @@
-package com.thickman.budget.object;
+package com.bro.budget.object;
 
 import io.realm.RealmObject;
 import io.realm.annotations.PrimaryKey;

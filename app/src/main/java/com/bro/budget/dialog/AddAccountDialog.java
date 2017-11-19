@@ -1,4 +1,4 @@
-package com.thickman.budget.dialog;
+package com.bro.budget.dialog;
 
 import android.content.Context;
 import android.support.annotation.Nullable;
@@ -7,10 +7,15 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
 
-import com.thickman.budget.R;
-import com.thickman.budget.enums.AccountType;
-import com.thickman.budget.object.Account;
-import com.thickman.budget.object.Transaction;
+import com.bro.budget.R;
+import com.bro.budget.enums.AccountType;
+import com.bro.budget.event.RefreshEvent;
+import com.bro.budget.object.Account;
+import com.bro.budget.object.Transaction;
+import com.bro.budget.realm.AccountRealmController;
+import com.bro.budget.realm.TransactionRealmController;
+
+import org.greenrobot.eventbus.EventBus;
 
 import java.util.List;
 
@@ -19,11 +24,9 @@ public class AddAccountDialog extends BaseAddCancelDialog {
     private EditText accountName;
     private EditText startingBalance;
     private Spinner accountType;
-    private AddAccountDialogListener listener;
 
-    public AddAccountDialog(Context context, AddAccountDialogListener listener) {
+    public AddAccountDialog(Context context) {
         super(context);
-        this.listener = listener;
         setTitle("Add Account");
     }
 
@@ -44,7 +47,7 @@ public class AddAccountDialog extends BaseAddCancelDialog {
         t.setRecurring(false);
         t.setIncome(true);
         t.setDate(System.currentTimeMillis());
-        t.setCategory(10);
+        t.setCategory(0);
         t.setAmount(getBalance());
         t.setAccount(account.getId());
         return t;
@@ -67,9 +70,9 @@ public class AddAccountDialog extends BaseAddCancelDialog {
 
     @Override
     protected void initViews() {
-        accountName = (EditText) findViewById(R.id.name);
-        startingBalance = (EditText) findViewById(R.id.toBeBudgeted);
-        accountType = (Spinner) findViewById(R.id.account_types);
+        accountName = findViewById(R.id.name);
+        startingBalance = findViewById(R.id.toBeBudgeted);
+        accountType = findViewById(R.id.account_types);
         setSpinner(AccountType.getAccountTypes(), accountType);
     }
 
@@ -80,23 +83,17 @@ public class AddAccountDialog extends BaseAddCancelDialog {
 
     @Override
     protected void onAddButtonClicked() {
-        if (listener != null) {
-            Account a = getAccount();
-            Transaction t = getInitialTransaction(a);
-            listener.onAddButtonClicked(a, t);
+        Account account = getAccount();
+        Transaction initialTransaction = getInitialTransaction(account);
+        AccountRealmController.getInstance().addAccount(account);
+        if (initialTransaction != null) {
+            TransactionRealmController.getInstance().addTransaction(initialTransaction);
         }
+        EventBus.getDefault().post(new RefreshEvent());
     }
 
     @Override
     protected void onCancelButtonClicked() {
-        if (listener != null) {
-            listener.onCancelButtonClicked();
-        }
-    }
 
-    public interface AddAccountDialogListener {
-        void onAddButtonClicked(Account account, @Nullable Transaction initialTransaction);
-
-        void onCancelButtonClicked();
     }
 }

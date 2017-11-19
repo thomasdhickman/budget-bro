@@ -1,4 +1,4 @@
-package com.thickman.budget.fragment;
+package com.bro.budget.fragment;
 
 import android.content.DialogInterface;
 import android.os.Bundle;
@@ -6,18 +6,17 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.thickman.budget.R;
-import com.thickman.budget.adapter.TransactionRecyclerViewAdapter;
-import com.thickman.budget.dialog.AddTransactionDialog;
-import com.thickman.budget.event.RefreshEvent;
-import com.thickman.budget.object.Transaction;
-import com.thickman.budget.realm.RealmTransactionsAdapter;
-import com.thickman.budget.realm.TransactionRealmController;
+import com.bro.budget.R;
+import com.bro.budget.adapter.TransactionRecyclerViewAdapter;
+import com.bro.budget.dialog.AddTransactionDialog;
+import com.bro.budget.event.RefreshEvent;
+import com.bro.budget.object.Transaction;
+import com.bro.budget.realm.RealmTransactionsAdapter;
+import com.bro.budget.realm.TransactionRealmController;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -36,7 +35,7 @@ public class TransactionListFragment extends ActionFragment implements Transacti
     private static int LIST_TYPE_RECURRING = 1;
 
     public TransactionListFragment() {
-        Log.d("TransactionList", "");
+
     }
 
     public static TransactionListFragment newPostedTransactionInstance() {
@@ -151,14 +150,8 @@ public class TransactionListFragment extends ActionFragment implements Transacti
     }
 
     @Override
-    public void onAction() {
-        AddTransactionDialog dialog = new AddTransactionDialog(getContext());
-        dialog.show();
-    }
-
-    @Override
-    public String getFragmentName() {
-        return isRecurringTransactionList() ? "Recurring Transactions" : "Posted Transactions";
+    public int getFragmentName() {
+        return isRecurringTransactionList() ? R.string.recurring_transactions : R.string.posted_transactions;
     }
 
     private boolean isRecurringTransactionList() {

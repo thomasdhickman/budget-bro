@@ -1,4 +1,4 @@
-package com.thickman.budget.fragment;
+package com.bro.budget.fragment;
 
 
 import android.os.Bundle;
@@ -9,15 +9,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.thickman.budget.R;
-import com.thickman.budget.adapter.CategoryViewAdapter;
-import com.thickman.budget.dialog.AddTransactionDialog;
-import com.thickman.budget.event.RefreshEvent;
-import com.thickman.budget.object.BudgetItem;
-import com.thickman.budget.realm.BudgetItemRealmController;
-import com.thickman.budget.realm.CategoryRealmController;
-import com.thickman.budget.realm.RealmCategoryAdapter;
-import com.thickman.budget.util.TransactionUtils;
+import com.bro.budget.R;
+import com.bro.budget.adapter.CategoryViewAdapter;
+import com.bro.budget.event.RefreshEvent;
+import com.bro.budget.object.BudgetItem;
+import com.bro.budget.realm.BudgetItemRealmController;
+import com.bro.budget.realm.CategoryRealmController;
+import com.bro.budget.realm.RealmCategoryAdapter;
+import com.bro.budget.util.TransactionUtils;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -70,14 +69,8 @@ public class HomeFragment extends ActionFragment implements CategoryViewAdapter.
     }
 
     @Override
-    public void onAction() {
-        AddTransactionDialog dialog = new AddTransactionDialog(getContext());
-        dialog.show();
-    }
-
-    @Override
-    public String getFragmentName() {
-        return "Home";
+    public int getFragmentName() {
+        return R.string.home;
     }
 
     private void setupRecycler() {

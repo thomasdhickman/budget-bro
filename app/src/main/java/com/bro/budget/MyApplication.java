@@ -1,4 +1,4 @@
-package com.thickman.budget;
+package com.bro.budget;
 
 import android.app.Application;
 

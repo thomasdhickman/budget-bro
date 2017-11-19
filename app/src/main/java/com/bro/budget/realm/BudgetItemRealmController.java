@@ -1,7 +1,7 @@
-package com.thickman.budget.realm;
+package com.bro.budget.realm;
 
-import com.thickman.budget.object.BudgetItem;
-import com.thickman.budget.object.Transaction;
+import com.bro.budget.object.BudgetItem;
+import com.bro.budget.object.Transaction;
 
 import org.joda.time.DateTime;
 

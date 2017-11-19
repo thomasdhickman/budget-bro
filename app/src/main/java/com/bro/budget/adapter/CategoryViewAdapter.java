@@ -1,4 +1,4 @@
-package com.thickman.budget.adapter;
+package com.bro.budget.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -11,15 +11,15 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.thickman.budget.R;
-import com.thickman.budget.event.RefreshEvent;
-import com.thickman.budget.object.BudgetItem;
-import com.thickman.budget.object.Category;
-import com.thickman.budget.object.Transaction;
-import com.thickman.budget.realm.BudgetItemRealmController;
-import com.thickman.budget.realm.RealmRecyclerViewAdapter;
-import com.thickman.budget.realm.TransactionRealmController;
-import com.thickman.budget.util.TransactionUtils;
+import com.bro.budget.R;
+import com.bro.budget.event.RefreshEvent;
+import com.bro.budget.object.BudgetItem;
+import com.bro.budget.object.Category;
+import com.bro.budget.object.Transaction;
+import com.bro.budget.realm.BudgetItemRealmController;
+import com.bro.budget.realm.RealmRecyclerViewAdapter;
+import com.bro.budget.realm.TransactionRealmController;
+import com.bro.budget.util.TransactionUtils;
 
 import org.greenrobot.eventbus.EventBus;
 

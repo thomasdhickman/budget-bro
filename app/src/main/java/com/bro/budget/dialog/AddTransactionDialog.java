@@ -1,4 +1,4 @@
-package com.thickman.budget.dialog;
+package com.bro.budget.dialog;
 
 import android.content.Context;
 import android.util.Log;
@@ -11,18 +11,18 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 
-import com.thickman.budget.R;
-import com.thickman.budget.enums.RecurringFrequency;
-import com.thickman.budget.event.RefreshEvent;
-import com.thickman.budget.object.Account;
-import com.thickman.budget.object.Category;
-import com.thickman.budget.object.Transaction;
-import com.thickman.budget.realm.AccountRealmController;
-import com.thickman.budget.realm.CategoryRealmController;
-import com.thickman.budget.realm.TransactionRealmController;
-import com.thickman.budget.util.TransactionUtils;
-import com.thickman.budget.adapter.AccountArrayAdapter;
-import com.thickman.budget.adapter.CategoryArrayAdapter;
+import com.bro.budget.R;
+import com.bro.budget.enums.RecurringFrequency;
+import com.bro.budget.event.RefreshEvent;
+import com.bro.budget.object.Account;
+import com.bro.budget.object.Category;
+import com.bro.budget.object.Transaction;
+import com.bro.budget.realm.AccountRealmController;
+import com.bro.budget.realm.CategoryRealmController;
+import com.bro.budget.realm.TransactionRealmController;
+import com.bro.budget.util.TransactionUtils;
+import com.bro.budget.adapter.AccountArrayAdapter;
+import com.bro.budget.adapter.CategoryArrayAdapter;
 
 import org.greenrobot.eventbus.EventBus;
 

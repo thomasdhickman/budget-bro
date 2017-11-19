@@ -1,4 +1,4 @@
-package com.thickman.budget.event;
+package com.bro.budget.event;
 
 public class RefreshEvent {
 }

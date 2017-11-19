@@ -1,4 +1,4 @@
-package com.thickman.budget.adapter;
+package com.bro.budget.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -7,11 +7,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.thickman.budget.R;
-import com.thickman.budget.object.Account;
-import com.thickman.budget.realm.AccountRealmController;
-import com.thickman.budget.realm.RealmRecyclerViewAdapter;
-import com.thickman.budget.util.TransactionUtils;
+import com.bro.budget.R;
+import com.bro.budget.object.Account;
+import com.bro.budget.realm.AccountRealmController;
+import com.bro.budget.realm.RealmRecyclerViewAdapter;
+import com.bro.budget.util.TransactionUtils;
 
 public class AccountRecyclerViewAdapter extends RealmRecyclerViewAdapter<Account> {
 

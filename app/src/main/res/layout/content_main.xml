@@ -8,7 +8,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.thickman.budget.MainActivity"
     tools:showIn="@layout/app_bar_main">
 
     <FrameLayout
@@ -18,7 +17,7 @@
     </FrameLayout>
 
     <com.github.clans.fab.FloatingActionMenu
-        android:id="@+id/fab_add"
+        android:id="@+id/fabMenu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -31,6 +30,17 @@
         app:menu_colorNormal="@color/colorAccent"
         app:menu_colorPressed="@color/colorAccent"
         app:menu_colorRipple="@color/colorAccent">
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/addAccount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_action_add_account"
+            app:fab_colorNormal="@color/transaction_green"
+            app:fab_colorPressed="@color/transaction_green"
+            app:fab_colorRipple="@color/transaction_green"
+            fab:fab_label="Add Account"
+            fab:fab_size="mini"/>
 
         <com.github.clans.fab.FloatingActionButton
             android:id="@+id/addCategory"
@@ -52,17 +62,6 @@
             app:fab_colorPressed="@color/transaction_green"
             app:fab_colorRipple="@color/transaction_green"
             fab:fab_label="Add Transaction"
-            fab:fab_size="mini"/>
-
-        <com.github.clans.fab.FloatingActionButton
-            android:id="@+id/addAccount"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_action_add_account"
-            app:fab_colorNormal="@color/transaction_green"
-            app:fab_colorPressed="@color/transaction_green"
-            app:fab_colorRipple="@color/transaction_green"
-            fab:fab_label="Add Account"
             fab:fab_size="mini"/>
 
     </com.github.clans.fab.FloatingActionMenu>

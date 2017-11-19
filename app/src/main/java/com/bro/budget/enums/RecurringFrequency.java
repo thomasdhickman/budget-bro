@@ -1,4 +1,4 @@
-package com.thickman.budget.enums;
+package com.bro.budget.enums;
 
 public enum RecurringFrequency {
     WEEK,

@@ -1,4 +1,4 @@
-package com.thickman.budget.realm;
+package com.bro.budget.realm;
 
 import android.support.v7.widget.RecyclerView;
 import io.realm.RealmBaseAdapter;

@@ -1,4 +1,4 @@
-package com.thickman.budget.adapter;
+package com.bro.budget.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -7,11 +7,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.thickman.budget.R;
-import com.thickman.budget.realm.RealmRecyclerViewAdapter;
-import com.thickman.budget.object.Transaction;
-import com.thickman.budget.realm.CategoryRealmController;
-import com.thickman.budget.util.TransactionUtils;
+import com.bro.budget.R;
+import com.bro.budget.object.Category;
+import com.bro.budget.object.Transaction;
+import com.bro.budget.realm.CategoryRealmController;
+import com.bro.budget.realm.RealmRecyclerViewAdapter;
+import com.bro.budget.util.TransactionUtils;
 
 public class TransactionRecyclerViewAdapter extends RealmRecyclerViewAdapter<Transaction> {
 
@@ -41,11 +42,8 @@ public class TransactionRecyclerViewAdapter extends RealmRecyclerViewAdapter<Tra
         viewHolder.mDueDateView.setText(getDateText(transaction));
         viewHolder.mAmountDueView.setText(TransactionUtils.getAmountFormat(transaction.getAmount()));
         viewHolder.mAmountDueView.setTextColor(context.getColor(TransactionUtils.getAmountColor(transaction.getAmount())));
-        try {
-            viewHolder.mCategoryView.setText(CategoryRealmController.getInstance().getCategory(transaction.getCategory()).getName());
-        } catch (Exception ex) {
-
-        }
+        Category category = CategoryRealmController.getInstance().getCategory(transaction.getCategory());
+        viewHolder.mCategoryView.setText(category != null ? category.getName() : "Income");
 
         viewHolder.mView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -84,6 +82,12 @@ public class TransactionRecyclerViewAdapter extends RealmRecyclerViewAdapter<Tra
         this.showRecurringFrequency = showRecurringFrequency;
     }
 
+    public interface OnTransactionClickListener {
+        void onTransactionClicked(Transaction transaction);
+
+        void onTransactionLongClicked(Transaction transaction);
+    }
+
     private class TransactionViewHolder extends RecyclerView.ViewHolder {
         final View mView;
         final TextView mPayeeView;
@@ -100,11 +104,5 @@ public class TransactionRecyclerViewAdapter extends RealmRecyclerViewAdapter<Tra
             mDueDateView = view.findViewById(R.id.due_date);
             mCategoryView = view.findViewById(R.id.category);
         }
-    }
-
-    public interface OnTransactionClickListener {
-        void onTransactionClicked(Transaction transaction);
-
-        void onTransactionLongClicked(Transaction transaction);
     }
 }

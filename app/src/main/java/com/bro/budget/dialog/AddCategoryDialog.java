@@ -1,12 +1,12 @@
-package com.thickman.budget.dialog;
+package com.bro.budget.dialog;
 
 import android.content.Context;
 import android.widget.EditText;
 
-import com.thickman.budget.R;
-import com.thickman.budget.event.RefreshEvent;
-import com.thickman.budget.object.Category;
-import com.thickman.budget.realm.CategoryRealmController;
+import com.bro.budget.R;
+import com.bro.budget.event.RefreshEvent;
+import com.bro.budget.object.Category;
+import com.bro.budget.realm.CategoryRealmController;
 
 import org.greenrobot.eventbus.EventBus;
 

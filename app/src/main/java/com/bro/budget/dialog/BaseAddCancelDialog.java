@@ -1,4 +1,4 @@
-package com.thickman.budget.dialog;
+package com.bro.budget.dialog;
 
 import android.app.Dialog;
 import android.content.Context;
@@ -9,7 +9,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.thickman.budget.R;
+import com.bro.budget.R;
 
 public abstract class BaseAddCancelDialog extends Dialog implements View.OnClickListener {
 

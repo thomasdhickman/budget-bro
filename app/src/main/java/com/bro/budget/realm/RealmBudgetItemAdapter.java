@@ -1,8 +1,8 @@
-package com.thickman.budget.realm;
+package com.bro.budget.realm;
 
 import android.content.Context;
 
-import com.thickman.budget.object.BudgetItem;
+import com.bro.budget.object.BudgetItem;
 
 import io.realm.RealmResults;
 

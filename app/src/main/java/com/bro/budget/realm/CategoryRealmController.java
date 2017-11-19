@@ -1,6 +1,6 @@
-package com.thickman.budget.realm;
+package com.bro.budget.realm;
 
-import com.thickman.budget.object.Category;
+import com.bro.budget.object.Category;
 
 import io.realm.Realm;
 import io.realm.RealmResults;

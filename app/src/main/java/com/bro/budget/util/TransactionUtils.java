@@ -1,10 +1,10 @@
-package com.thickman.budget.util;
+package com.bro.budget.util;
 
 import android.support.annotation.ColorRes;
 
-import com.thickman.budget.R;
-import com.thickman.budget.enums.RecurringFrequency;
-import com.thickman.budget.object.Transaction;
+import com.bro.budget.R;
+import com.bro.budget.enums.RecurringFrequency;
+import com.bro.budget.object.Transaction;
 
 import java.text.SimpleDateFormat;
 import java.util.Locale;

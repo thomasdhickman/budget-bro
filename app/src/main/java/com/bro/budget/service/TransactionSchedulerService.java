@@ -1,4 +1,4 @@
-package com.thickman.budget.service;
+package com.bro.budget.service;
 
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -10,12 +10,12 @@ import android.os.IBinder;
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.app.TaskStackBuilder;
 
-import com.thickman.budget.MainActivity;
-import com.thickman.budget.R;
-import com.thickman.budget.object.Transaction;
-import com.thickman.budget.realm.BudgetItemRealmController;
-import com.thickman.budget.realm.TransactionRealmController;
-import com.thickman.budget.util.TransactionUtils;
+import com.bro.budget.MainActivity;
+import com.bro.budget.R;
+import com.bro.budget.object.Transaction;
+import com.bro.budget.realm.BudgetItemRealmController;
+import com.bro.budget.realm.TransactionRealmController;
+import com.bro.budget.util.TransactionUtils;
 
 import io.realm.RealmResults;
 

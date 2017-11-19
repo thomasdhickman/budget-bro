@@ -1,4 +1,4 @@
-package com.thickman.budget;
+package com.bro.budget;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.thickman.billbro", appContext.getPackageName());
+        assertEquals("com.bro.billbro", appContext.getPackageName());
     }
 }

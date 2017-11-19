@@ -1,7 +1,7 @@
-package com.thickman.budget.realm;
+package com.bro.budget.realm;
 
-import com.thickman.budget.object.Account;
-import com.thickman.budget.object.Transaction;
+import com.bro.budget.object.Account;
+import com.bro.budget.object.Transaction;
 
 import io.realm.Realm;
 import io.realm.RealmResults;
@@ -55,5 +55,9 @@ public class AccountRealmController {
             ret += t.getAmount();
         }
         return ret;
+    }
+
+    public boolean canAddTransaction() {
+        return realm.where(Account.class).findFirst() != null;
     }
 }
