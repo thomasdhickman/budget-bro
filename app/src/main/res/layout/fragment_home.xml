@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/clouds"
-    tools:context="com.thickman.aurora.fragment.HomeFragment">
+    tools:context="com.thickman.budget.fragment.HomeFragment">
 
     <LinearLayout
         android:id="@+id/balance_layout"
